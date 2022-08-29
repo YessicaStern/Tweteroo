@@ -7,9 +7,8 @@ server.use(express.json());
 
 const user=[];
 const tweets=[];
-
 server.get("/sign-up",(req,res)=>{
-    res.send(user[0].avatar);
+    res.send(user);
 });
 server.post("/sign-up",(req,res)=>{
     user.push(req.body);
@@ -20,8 +19,9 @@ server.get("/tweets",(req,res)=>{
 });
 server.post("/tweets",(req,res)=>{
     const tweet=req.body;
-    const tweetAvatar=tweet.avatar;
-    tweets.push({...tweet, tweetAvatar:user[0].avatar});
+    const avatar=tweet.avatar;
+    
+    tweets.push({...tweet, avatar:user[0].avatar});
     res.send("OK TT");
 });
 
