@@ -22,7 +22,7 @@ server.post("/tweets",(req,res)=>{
     const avatar=tweet.avatar;
     
     tweets.push({...tweet, avatar:user[0].avatar});
-    res.send("OK TT");
+    res.send("OK");
 });
 
 server.listen(5000,()=>{console.log("Deu bom")});
